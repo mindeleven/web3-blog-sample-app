@@ -1,3 +1,5 @@
+/* source code taken from */
+/* https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74 */
 import { css } from '@emotion/css'
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
@@ -81,7 +83,7 @@ export async function getServerSideProps() {
 
   const contract = new ethers.Contract(contractAddress, Blog.abi, provider)
   const data = await contract.fetchPosts()
-  
+
   return {
     props: {
       posts: JSON.parse(JSON.stringify(data))
