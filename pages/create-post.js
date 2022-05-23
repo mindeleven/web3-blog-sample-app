@@ -74,8 +74,10 @@ function CreatePost() {
       console.log('contract: ', contract)
       try {
         const val = await contract.createPost(post.title, hash)
+
         /* optional - wait for transaction to be confirmed before rerouting */
-        /* await provider.waitForTransaction(val.hash) */
+        await provider.waitForTransaction(val.hash)
+
         console.log('val: ', val)
       } catch (err) {
         console.log('Error: ', err)
