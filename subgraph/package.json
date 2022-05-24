@@ -1,0 +1,16 @@
+{
+  "name": "my-blog-on-the-mumbai-network",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ juergenkober/my-blog-on-the-mumbai-network",
+    "create-local": "graph create --node http://localhost:8020/ juergenkober/my-blog-on-the-mumbai-network",
+    "remove-local": "graph remove --node http://localhost:8020/ juergenkober/my-blog-on-the-mumbai-network",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 juergenkober/my-blog-on-the-mumbai-network"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.30.0",
+    "@graphprotocol/graph-ts": "0.27.0"
+  }
+}
