@@ -1,14 +1,19 @@
-type PostCreated @entity {
+type Post @entity {
   id: ID!
-  id: BigInt! # uint256
-  title: String! # string
-  hash: String! # string
+  title: String!
+  contentHash: String!
+  published: Boolean!
+  postContent: String!
+  createdAtTimestamp: BigInt!
+  updatedAtTimestamp: BigInt!
 }
 
-type PostUpdated @entity {
-  id: ID!
-  id: BigInt! # uint256
-  title: String! # string
-  hash: String! # string
-  published: Boolean! # bool
-}
+type _Schema_
+  @fulltext(
+    name: "postSearch"
+    language: en
+    algorithm: rank
+    include: [
+      { entity: "Post", fields: [{ name: "title" }, { name: "postContent" }] }
+    ]
+  )
