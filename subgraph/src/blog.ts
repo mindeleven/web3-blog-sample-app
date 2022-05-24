@@ -2,11 +2,9 @@ import {
   PostCreated as PostCreatedEvent,
   PostUpdated as PostUpdatedEvent
 } from "../generated/Blog/Blog"
-
 import {
   Post
 } from "../generated/schema"
-
 import { ipfs, json } from '@graphprotocol/graph-ts'
 
 export function handlePostCreated(event: PostCreatedEvent): void {
